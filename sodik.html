@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sodik Nusantara</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+      color:#333;
+    }
+
+    header{
+      background:linear-gradient(135deg,#ff7b00,#ffb347);
+      color:white;
+      padding:20px;
+      text-align:center;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1{
+      font-size:32px;
+      margin-bottom:10px;
+    }
+
+    .search-box{
+      width:90%;
+      max-width:500px;
+      margin:20px auto;
+      display:flex;
+      background:white;
+      border-radius:50px;
+      overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .search-box input{
+      flex:1;
+      padding:15px;
+      border:none;
+      outline:none;
+      font-size:16px;
+    }
+
+    .search-box button{
+      background:#ff7b00;
+      border:none;
+      color:white;
+      padding:0 20px;
+      cursor:pointer;
+      font-size:18px;
+    }
+
+    .container{
+      width:90%;
+      margin:30px auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:20px;
+    }
+
+    .card-content h3{
+      margin-bottom:10px;
+      color:#ff7b00;
+    }
+
+    .price{
+      font-size:20px;
+      font-weight:bold;
+      margin:10px 0;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:10px 18px;
+      background:#ff7b00;
+      color:white;
+      text-decoration:none;
+      border-radius:10px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#e66a00;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#222;
+      color:white;
+      margin-top:40px;
+    }
+
+    @media(max-width:600px){
+      header h1{
+        font-size:24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><i class="fa-solid fa-bowl-food"></i> sodik Nusantara</h1>
+  <p>Menu makanan tradisional Indonesia</p>
+</header>
+
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Cari makanan...">
+  <button onclick="searchMenu()"><i class="fa-solid fa-magnifying-glass"></i></button>
+</div>
+
+<div class="container" id="menuContainer">
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=1200&auto=format&fit=crop" alt="Rendang">
+    <div class="card-content">
+      <h3>Rendang</h3>
+      <p>Makanan khas Padang dengan bumbu rempah kaya rasa.</p>
+      <div class="price">Rp 30.000</div>
+      <a href="#" class="btn">Pesan</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=1200&auto=format&fit=crop" alt="Sate Ayam">
+    <div class="card-content">
+      <h3>Sate Ayam</h3>
+      <p>Sate ayam lezat dengan saus kacang khas Indonesia.</p>
+      <div class="price">Rp 20.000</div>
+      <a href="#" class="btn">Pesan</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1617692855027-33b14f061079?q=80&w=1200&auto=format&fit=crop" alt="Gudeg">
+    <div class="card-content">
+      <h3>Gudeg</h3>
+      <p>Kuliner khas Yogyakarta dengan rasa manis gurih.</p>
+      <div class="price">Rp 25.000</div>
+      <a href="#" class="btn">Pesan</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=1200&auto=format&fit=crop" alt="Pempek">
+    <div class="card-content">
+      <h3>Pempek</h3>
+      <p>Makanan khas Palembang dengan kuah cuko segar.</p>
+      <div class="price">Rp 18.000</div>
+      <a href="#" class="btn">Pesan</a>
+    </div>
+  </div>
+
+</div>
+
+<div style="width:90%;max-width:500px;margin:40px auto;background:white;padding:25px;border-radius:20px;box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+  <h2 style="text-align:center;color:#ff7b00;margin-bottom:20px;">Pembayaran</h2>
+
+  <label>Total Belanja</label>
+  <input type="number" id="total" placeholder="Masukkan total" style="width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1px solid #ccc;">
+
+  <label>Uang Bayar</label>
+  <input type="number" id="bayar" placeholder="Masukkan uang bayar" style="width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1px solid #ccc;">
+
+  <button onclick="hitungKembalian()" style="width:100%;padding:12px;background:#ff7b00;color:white;border:none;border-radius:10px;font-size:16px;cursor:pointer;">Hitung Kembalian</button>
+
+  <h3 style="margin-top:20px;text-align:center;" id="hasil">Kembalian: Rp 0</h3>
+</div>
+
+<footer>
+  <p>© 2026 sodik Nusantara | Dibuat oleh Ricky</p>
+</footer>
+
+<script>
+  function searchMenu() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      let title = card.querySelector('h3').innerText.toLowerCase();
+
+      if(title.includes(input)){
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  function hitungKembalian() {
+    let total = parseInt(document.getElementById('total').value) || 0;
+    let bayar = parseInt(document.getElementById('bayar').value) || 0;
+
+    let kembalian = bayar - total;
+
+    if(bayar < total){
+      document.getElementById('hasil').innerHTML = 'Uang tidak cukup!';
+    } else {
+      document.getElementById('hasil').innerHTML = 'Kembalian: Rp ' + kembalian.toLocaleString('id-ID');
+    }
+  }
+</script>
+
+</body>
+</html>
+```
+
+## Cara Menjalankan
+
+1. Salin semua kode di atas.
+2. Simpan dengan nama `index.html`.
+3. Buka file di browser.
+4. Upload ke GitHub Pages atau hosting untuk online.
